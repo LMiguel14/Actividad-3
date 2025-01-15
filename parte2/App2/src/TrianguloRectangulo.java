@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 /**
  * Esta clase define la interfaz gráfica para calcular el área y el perímetro de un triángulo rectángulo.
  */
-public class CalculadoraTrianguloRectanguloGUI extends JFrame {
+public class TrianguloRectangulo extends JFrame {
     private JTextField baseField;
     private JTextField alturaField;
     private JLabel areaLabel;
@@ -15,10 +15,10 @@ public class CalculadoraTrianguloRectanguloGUI extends JFrame {
     private JLabel tipoLabel;
 
     /**
-     * Constructor de la clase CalculadoraTrianguloRectanguloGUI.
+     * Constructor de la clase TrianguloRectangulo.
      * Configura la interfaz gráfica.
      */
-    public CalculadoraTrianguloRectanguloGUI() {
+    public TrianguloRectangulo() {
         setTitle("Calculadora de Triángulo Rectángulo");
         setSize(500, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,60 +84,38 @@ public class CalculadoraTrianguloRectanguloGUI extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new CalculadoraTrianguloRectanguloGUI().setVisible(true);
+                new TrianguloRectangulo().setVisible(true);
             }
         });
     }
 }
 
-/**
- * Esta clase define objetos de tipo Triángulo Rectángulo con una base y una altura como atributos.
- * @version 1.2/2020
- */
+
 class TriánguloRectángulo {
     int base; // Atributo que define la base de un triángulo rectángulo
     int altura; // Atributo que define la altura de un triángulo rectángulo
 
-    /**
-     * Constructor de la clase TriánguloRectángulo
-     * @param base Parámetro que define la base de un triángulo rectángulo
-     * @param altura Parámetro que define la altura de un triángulo rectángulo
-     */
+
     public TriánguloRectángulo(int base, int altura) {
         this.base = base;
         this.altura = altura;
     }
 
-    /**
-     * Método que calcula y devuelve el área de un triángulo rectángulo
-     * como la base multiplicada por la altura sobre 2
-     * @return Área de un triángulo rectángulo
-     */
     double calcularArea() {
         return (base * altura / 2);
     }
 
-    /**
-     * Método que calcula y devuelve el perímetro de un triángulo rectángulo
-     * como la suma de la base, la altura y la hipotenusa
-     * @return Perímetro de un triángulo rectángulo
-     */
+ 
     double calcularPerímetro() {
         return (base + altura + calcularHipotenusa()); // Invoca al método calcular hipotenusa
     }
 
-    /**
-     * Método que calcula y devuelve la hipotenusa de un triángulo rectángulo utilizando el teorema de Pitágoras
-     * @return Hipotenusa de un triángulo rectángulo
-     */
+
     double calcularHipotenusa() {
         return Math.sqrt(base * base + altura * altura);
     }
 
-    /**
-     * Método que determina el tipo de triángulo rectángulo
-     * @return Tipo de triángulo rectángulo
-     */
+   
     String determinarTipoTriángulo() {
         if ((base == altura) && (base == calcularHipotenusa()) && (altura == calcularHipotenusa())) {
             return "Equilátero"; // Todos sus lados son iguales

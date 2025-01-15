@@ -6,16 +6,16 @@ import java.awt.event.ActionListener;
 /**
  * Esta clase define la interfaz gráfica para calcular el área y el perímetro de un cuadrado.
  */
-public class CalculadoraCuadradoGUI extends JFrame {
+public class CalculadoraCuadrado extends JFrame {
     private JTextField ladoField;
     private JLabel areaLabel;
     private JLabel perimetroLabel;
 
     /**
-     * Constructor de la clase CalculadoraCuadradoGUI.
+     * Constructor de la clase CalculadoraCuadrado.
      * Configura la interfaz gráfica.
      */
-    public CalculadoraCuadradoGUI() {
+    public CalculadoraCuadrado() {
         setTitle("Calculadora de Cuadrado");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,7 +67,7 @@ public class CalculadoraCuadradoGUI extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new CalculadoraCuadradoGUI().setVisible(true);
+                new CalculadoraCuadrado().setVisible(true);
             }
         });
     }

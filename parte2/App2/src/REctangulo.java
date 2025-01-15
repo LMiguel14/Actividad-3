@@ -6,17 +6,17 @@ import java.awt.event.ActionListener;
 /**
  * Esta clase define la interfaz gráfica para calcular el área y el perímetro de un rectángulo.
  */
-public class CalculadoraRectanguloGUI extends JFrame {
+public class REctangulo extends JFrame {
     private JTextField baseField;
     private JTextField alturaField;
     private JLabel areaLabel;
     private JLabel perimetroLabel;
 
     /**
-     * Constructor de la clase CalculadoraRectanguloGUI.
+     * Constructor de la clase REctangulo.
      * Configura la interfaz gráfica.
      */
-    public CalculadoraRectanguloGUI() {
+    public REctangulo() {
         setTitle("Calculadora de Rectángulo");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,7 +73,7 @@ public class CalculadoraRectanguloGUI extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new CalculadoraRectanguloGUI().setVisible(true);
+                new REctangulo().setVisible(true);
             }
         });
     }

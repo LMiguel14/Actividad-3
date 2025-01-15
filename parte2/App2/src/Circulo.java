@@ -6,16 +6,16 @@ import java.awt.event.ActionListener;
 /**
  * Esta clase define la interfaz gráfica para calcular el área y el perímetro de un círculo.
  */
-public class CalculadoraCirculoGUI extends JFrame {
+public class Circulo extends JFrame {
     private JTextField radioField;
     private JLabel areaLabel;
     private JLabel perimetroLabel;
 
     /**
-     * Constructor de la clase CalculadoraCirculoGUI.
+     * Constructor de la clase Circulo.
      * Configura la interfaz gráfica.
      */
-    public CalculadoraCirculoGUI() {
+    public Circulo() {
         setTitle("Calculadora de Círculo");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,6 +45,8 @@ public class CalculadoraCirculoGUI extends JFrame {
         });
     }
 
+
+
     /**
      * Método que calcula el área y el perímetro del círculo.
      */
@@ -67,7 +69,7 @@ public class CalculadoraCirculoGUI extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new CalculadoraCirculoGUI().setVisible(true);
+                new Circulo().setVisible(true);
             }
         });
     }

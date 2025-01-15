@@ -6,16 +6,16 @@ import java.awt.event.ActionListener;
 /**
  * Esta clase define la interfaz gráfica para calcular el área y el perímetro de un círculo.
  */
-public class Circulo extends JFrame {
+public class CalculadoraCirculo extends JFrame {
     private JTextField radioField;
     private JLabel areaLabel;
     private JLabel perimetroLabel;
 
     /**
-     * Constructor de la clase Circulo.
+     * Constructor de la clase CalculadoraCirculoGUI.
      * Configura la interfaz gráfica.
      */
-    public Circulo() {
+    public CalculadoraCirculo() {
         setTitle("Calculadora de Círculo");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,8 +45,6 @@ public class Circulo extends JFrame {
         });
     }
 
-
-
     /**
      * Método que calcula el área y el perímetro del círculo.
      */
@@ -69,41 +67,25 @@ public class Circulo extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Circulo().setVisible(true);
+                new CalculadoraCirculo().setVisible(true);
             }
         });
     }
 }
 
-/**
- * Esta clase define objetos de tipo Círculo con su radio como atributo.
- * @version 1.2/2020
- */
+
 class Círculo {
     int radio; // Atributo que define el radio de un círculo
 
-    /**
-     * Constructor de la clase Círculo
-     * @param radio Parámetro que define el radio de un círculo
-     */
     Círculo(int radio) {
         this.radio = radio;
     }
 
-    /**
-     * Método que calcula y devuelve el área de un círculo como pi
-     * multiplicado por el radio al cuadrado
-     * @return Área de un círculo
-     */
     double calcularArea() {
         return Math.PI * Math.pow(radio, 2);
     }
 
-    /**
-     * Método que calcula y devuelve el perímetro de un círculo como la
-     * multiplicación de pi por el radio por 2
-     * @return Perímetro de un círculo
-     */
+   
     double calcularPerímetro() {
         return 2 * Math.PI * radio;
     }

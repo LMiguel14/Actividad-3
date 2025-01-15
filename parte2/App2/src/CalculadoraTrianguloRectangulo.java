@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 /**
  * Esta clase define la interfaz gráfica para calcular el área y el perímetro de un triángulo rectángulo.
  */
-public class TrianguloRectangulo extends JFrame {
+public class CalculadoraTrianguloRectangulo extends JFrame {
     private JTextField baseField;
     private JTextField alturaField;
     private JLabel areaLabel;
@@ -15,10 +15,10 @@ public class TrianguloRectangulo extends JFrame {
     private JLabel tipoLabel;
 
     /**
-     * Constructor de la clase TrianguloRectangulo.
+     * Constructor de la clase CalculadoraTrianguloRectangulo.
      * Configura la interfaz gráfica.
      */
-    public TrianguloRectangulo() {
+    public CalculadoraTrianguloRectangulo() {
         setTitle("Calculadora de Triángulo Rectángulo");
         setSize(500, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,7 +84,7 @@ public class TrianguloRectangulo extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new TrianguloRectangulo().setVisible(true);
+                new CalculadoraTrianguloRectangulo().setVisible(true);
             }
         });
     }
@@ -101,11 +101,12 @@ class TriánguloRectángulo {
         this.altura = altura;
     }
 
+
     double calcularArea() {
         return (base * altura / 2);
     }
 
- 
+
     double calcularPerímetro() {
         return (base + altura + calcularHipotenusa()); // Invoca al método calcular hipotenusa
     }
@@ -115,7 +116,6 @@ class TriánguloRectángulo {
         return Math.sqrt(base * base + altura * altura);
     }
 
-   
     String determinarTipoTriángulo() {
         if ((base == altura) && (base == calcularHipotenusa()) && (altura == calcularHipotenusa())) {
             return "Equilátero"; // Todos sus lados son iguales
